@@ -3,6 +3,8 @@
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TeamController::class,'index']);
+Route::get('/teams', [TeamController::class,'index']);
 
 Route::get('/teams/{id}', [TeamController::class,'show'])->name('single-team');
 
 Route::get('/player/{id}', [PlayersController::class,'show'])->name('single-player');
+
+Route::get('/register',[RegisterController::class,'create']);
+Route::post('/register',[RegisterController::class,'store']);
+
+Route::get('/login',[LoginController::class,'create'])->name('login');
+Route::post('/login',[LoginController::class,'store']);
+Route::get('/logout',[LoginController::class,'destroy']);
