@@ -5,6 +5,7 @@ use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,10 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/teams', [TeamController::class,'index']);
-
+Route::get('/', [TeamController::class,'index']);
 Route::get('/teams/{id}', [TeamController::class,'show'])->name('single-team');
+
+Route::post('/teams/{id}/comments', [CommentsController::class, 'store']);
 
 Route::get('/player/{id}', [PlayersController::class,'show'])->name('single-player');
 

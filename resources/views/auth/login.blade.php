@@ -16,7 +16,7 @@
 
             <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">password</label>
-            <input name= "password" class="form-control" id="exampleFormControlTextarea1">
+            <input name= "password" type="password" class="form-control" id="exampleFormControlTextarea1">
             </div>
 
             <button type="submit" class="btn btn-primary">Sign In</button>

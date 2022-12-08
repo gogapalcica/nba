@@ -10,8 +10,19 @@ class Team extends Model
 {
     use HasFactory;
 
+
     public function players()
     {
         return $this->hasMany(Player::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+
+    public function addComment($content) {
+        return Comment::create($content);
     }
 }

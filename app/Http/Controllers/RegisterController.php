@@ -9,7 +9,7 @@ class RegisterController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('guest');
+        $this->middleware('guest');
     }
 
     public function create()
@@ -24,7 +24,8 @@ class RegisterController extends Controller
             [
                 'name'=>'required|min:4',
                 'email'=>'required|email',
-                'password'=>'required|min:6'
+                'password'=>'required|min:6',
+                'password_confirmation'=>'required|same:password'
             ]
         );
 
@@ -36,7 +37,8 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect('/teams');
+
+        return redirect('/');
 
     }
 }

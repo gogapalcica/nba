@@ -8,6 +8,11 @@ use App\Models\Team;
 
 class PlayersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show($id){
         $player = Player::find($id);
         $team = Team::find($player['team_id']);
