@@ -23,7 +23,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 Route::get('/', [TeamController::class,'index']);
 Route::get('/teams/{id}', [TeamController::class,'show'])->name('single-team');
 
-Route::post('/teams/{id}/comments', [CommentsController::class, 'store']);
+Route::post('/teams/{id}/comments', [CommentsController::class, 'store'])->middleware('forbidden_words');
 
 Route::get('/player/{id}', [PlayersController::class,'show'])->name('single-player');
 

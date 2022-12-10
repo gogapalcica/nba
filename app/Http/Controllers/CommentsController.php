@@ -15,6 +15,7 @@ class CommentsController extends Controller
 
     public function store(StoreCommentRequest $request, $id)
     {
+
         $validated = $request->validated();
 
         $team = Team::find($id);
