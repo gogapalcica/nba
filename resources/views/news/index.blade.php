@@ -4,6 +4,8 @@
 
 @section('content')
 
+@include('partials.flash-message')
+
     <h1>NEWS:</h1>
 
     <ul>

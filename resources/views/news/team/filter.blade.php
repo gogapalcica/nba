@@ -5,9 +5,11 @@
 @section('content')
 
     <ul>
-        @foreach ($team->news as $news)
-            <li>{{$news->content}}</li>
+        @foreach ($news as $new)
+            <li>{{$new->content}}</li>
         @endforeach
     </ul>
+
+    {{ $news->onEachSide(5)->links() }}
 
 @endsection

@@ -31,7 +31,7 @@
 
         <select name="team_id[]" id="teams" multiple="">
 
-            @foreach (  $news->teams as $team)
+            @foreach ($teams as $team)
 
                 <option value={{$team->id}}>{{$team->name}}</option>
 

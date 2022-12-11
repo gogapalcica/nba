@@ -50,6 +50,7 @@
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
           <a class="p-2 text-muted" href="/news">News</a>
+          <a class="p-2 text-muted" href="/news/create">New News</a>
           <a class="p-2 text-muted" href="/">Teams</a>
         </nav>
       </div>
@@ -60,6 +61,12 @@
           <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
           @yield('content')
         </div>
+
+        @foreach ($teams as $team)
+            @if ($team->news->count()!=0)
+                <li><a href="{{route('filter-team', ['name' => $team->name])}}">{{$team->name}}</a></li>
+            @endif
+        @endforeach
       </div>
 
 
