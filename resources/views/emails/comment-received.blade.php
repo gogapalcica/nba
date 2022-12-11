@@ -4,6 +4,6 @@
 
 @section('content')
 
-<p>imate novi komentar</p>
+<p>imate novi komentar od {{auth()->user()->name}}</p>
 
 @endsection

@@ -22,7 +22,12 @@ class Team extends Model
     }
 
 
-    public function addComment($content) {
+    public function addComment($content)
+    {
         return Comment::create($content);
+    }
+
+    public function news(){
+        return $this->belongsToMany(News::class, 'news_teams');
     }
 }
